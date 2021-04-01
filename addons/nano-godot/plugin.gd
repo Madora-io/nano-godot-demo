@@ -3,7 +3,7 @@ extends EditorPlugin
 
 
 func _enter_tree():
-	preload("res://addons/nano-godot/rpc.gd")
+	preload("res://addons/nano-godot/nano_rpc.gd")
 	pass
 
 

@@ -10,18 +10,19 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
-"class": "Rpc",
+"class": "NanoRpc",
 "language": "GDScript",
-"path": "res://addons/nano-godot/rpc.gd"
+"path": "res://addons/nano-godot/nano_rpc.gd"
 } ]
 _global_script_class_icons={
-"Rpc": ""
+"NanoRpc": ""
 }
 
 [application]
 
 config/name="Nano-godot-plugin"
-config/icon="res://icon.png"
+run/main_scene="res://demo/main_scene.tscn"
+config/icon="res://demo/icon.png"
 
 [editor_plugins]
 
@@ -29,4 +30,4 @@ enabled=PoolStringArray( "nano-godot" )
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://demo/default_env.tres"
