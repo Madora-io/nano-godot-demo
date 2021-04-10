@@ -5,6 +5,7 @@ signal nano_response
 
 export(String) var nano_node_username
 export(String) var nano_node_password
+export(String) var nano_node_api_key
 export(String) var nano_node_url
 export(bool) var use_ssl = true
 
@@ -23,17 +24,23 @@ func _init() -> void:
 	if nano_node_username and nano_node_password:
 		var b64_encoded = Marshalls.utf8_to_base64(nano_node_username + ":" + nano_node_password)
 		basic_auth_header = "Authorization: Basic " + b64_encoded
+	elif nano_node_api_key:
+		basic_auth_header = "Authorization: " + nano_node_api_key
 	
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.connect("request_completed", self, "_on_request_completed")
 
 func rpc_call(request: NanoRequest) -> void:
+	assert(nano_node_url != null and nano_node_url.length() > 0)
+
 	var data = JSON.print(request)
 	var headers = []
 	if basic_auth_header:
 		headers.append(basic_auth_header)
-	http_request.request(nano_node_url, headers, use_ssl, HTTPClient.METHOD_POST, data)
+	var error = http_request.request(nano_node_url, headers, use_ssl, HTTPClient.METHOD_POST, data)
+	if error != OK:
+		push_error("An error occurred in the http_request.")
 
 func _on_request_completed(result, response_code, headers, body):
 	var decoded_result: Dictionary
