@@ -34,7 +34,6 @@ func rpc_call(request: Dictionary) -> void:
 	print(data)
 	var headers = []
 	if auth_header:
-		print("Adding auth header: " + auth_header)
 		headers.append(auth_header)
 	var error = http_request.request(nano_node_url, headers, use_ssl, HTTPClient.METHOD_POST, data)
 	if error != OK:
@@ -43,7 +42,14 @@ func rpc_call(request: Dictionary) -> void:
 func _on_request_completed(result, response_code, headers, body):
 	var decoded_result: Dictionary
 
-	decoded_result = JSON.parse(body.get_string_from_utf8()).get_result()
+	var json = JSON.parse(body.get_string_from_utf8())
+	if(json.error):
+		push_error("Could not parse Nano response: " + json.error_string)
+	
+	if(typeof(json.get_result()) == TYPE_DICTIONARY):
+		decoded_result = json
+	else:
+		push_error("Expected Dictionary response but got: " + str(json))
 
 	var r = NanoResponse.new()
 	r.result = decoded_result

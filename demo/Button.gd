@@ -2,12 +2,13 @@ extends Button
 
 var rpc
 var request
+const credentials = preload("credentials.gd")
 
 func _ready():
-	rpc = NanoRpc.new("https://mynano.ninja/api/node")
+	rpc = NanoRpc.new("http://madora.io/api/rpc")
 	add_child(rpc)
-	rpc.set_authorization_header("<insert token here>")
-	request = {"action": "telemetry"}
+	rpc.set_basic_auth(credentials.nano_node_username, credentials.nano_node_password)
+	request = NanoRpcActions.telemetry
 	rpc.connect("nano_response", self, "_on_rpc_response")
 	
 func _pressed():

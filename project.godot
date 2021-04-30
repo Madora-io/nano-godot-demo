@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "NanoRpc",
 "language": "GDScript",
 "path": "res://addons/nano-godot/nano_rpc.gd"
+}, {
+"base": "Node",
+"class": "NanoRpcActions",
+"language": "GDScript",
+"path": "res://addons/nano-godot/nano_rpc_actions.gd"
 } ]
 _global_script_class_icons={
-"NanoRpc": ""
+"NanoRpc": "",
+"NanoRpcActions": ""
 }
 
 [application]
