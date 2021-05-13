@@ -40,4 +40,26 @@ func account_weight(account: String):
 func accounts_balances(accounts: Array):
 	return {"action": "accounts_balances", "accounts": accounts}
 
+func accounts_frontiers(accounts: Array):
+	return {"action": "accounts_frontiers", "accounts": accounts}
+
+func accounts_pending(accounts: Array, count: int, threshold ):
+	return {"action": "accounts_pending", "accounts": accounts}
+
+# Deprecated in v22
+const active_difficulty = {"action": "active_difficulty"}
+
+const available_supply = {"action": "available_supply"}
+
+func block_account(block_hash: String):
+	return {"action": "block_account", "hash": block_hash}
+
+func block_confirm(block_hash: String):
+	return {"action": "block_confirm", "hash": block_hash}
+
+const block_count = {"action": "block_count"}
+
+func block_create():
+	return {"action": "block_create"}
+
 const telemetry = {"action":"telemetry"}
