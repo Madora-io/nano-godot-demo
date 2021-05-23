@@ -1,3 +1,6 @@
 [submodule "godot-headers"]
 	path = godot-headers
 	url = git@github.com:godotengine/godot-headers.git
+[submodule "NanoCppUtils"]
+	path = NanoCppUtils
+	url = git@github.com:Madora-io/NanoCppUtils.git
