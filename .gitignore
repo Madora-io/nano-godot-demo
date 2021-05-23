@@ -3,6 +3,7 @@
 .import/
 export.cfg
 export_presets.cfg
+api.json
 
 # Mono-specific ignores
 .mono/
