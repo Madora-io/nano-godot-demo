@@ -1,5 +1,5 @@
 [submodule "NanoCppUtils"]
-	path = src/NanoCppUtils
+	path = addons/NanoCppUtils
 	url = git@github.com:Madora-io/NanoCppUtils.git
 [submodule "godot-cpp"]
 	path = godot-cpp
