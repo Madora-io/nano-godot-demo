@@ -1,2 +1,2 @@
-# nano-godot-plugin
-A plugin for the Godot Game Engine that simplifies RPC and WebSocket requests to a remote Nano node.
+# nano-godot-demo
+An example project using the nano-godot-module, meant to demonstrate how Nano can be used in Godot.
