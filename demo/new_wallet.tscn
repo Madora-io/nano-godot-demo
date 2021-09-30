@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://demo/new_wallet.gd" type="Script" id=1]
+
+[sub_resource type="Theme" id=1]
+/colors/ = Color( 0, 0, 0, 1 )
+/colors/background = Color( 0.517647, 0.709804, 0.933333, 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.25
+anchor_top = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.25
+margin_top = -0.707123
+margin_bottom = 13.2929
+text = "No saved wallet found. Would you like to create a new one?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.4
+anchor_top = 0.75
+anchor_right = 0.6
+anchor_bottom = 0.8
+margin_left = -1.41425
+margin_top = 0.707092
+margin_bottom = 20.7071
+text = "Generate Wallet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Password" type="LineEdit" parent="."]
+anchor_left = 0.349309
+anchor_top = 0.45
+anchor_right = 0.649309
+anchor_bottom = 0.45
+margin_bottom = 40.0
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PasswordVerify" type="LineEdit" parent="."]
+anchor_left = 0.349309
+anchor_top = 0.6
+anchor_right = 0.649309
+anchor_bottom = 0.6
+margin_bottom = 40.0
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.25
+anchor_top = 0.4
+anchor_right = 0.75
+anchor_bottom = 0.4
+margin_top = -0.707092
+margin_bottom = 13.2929
+text = "Enter password to save seed with:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.25
+anchor_top = 0.55
+anchor_right = 0.75
+anchor_bottom = 0.55
+margin_top = -0.707092
+margin_bottom = 13.2929
+text = "Verify password:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+anchor_left = 0.25
+anchor_top = 0.7
+anchor_right = 0.75
+anchor_bottom = 0.7
+margin_top = -0.707092
+margin_bottom = 13.2929
+text = "Passwords do not match."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

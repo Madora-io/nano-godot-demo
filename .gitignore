@@ -11,3 +11,5 @@ data_*/
 
 # Credentials
 demo/credentials.gd
+
+.DS_Store

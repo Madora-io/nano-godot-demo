@@ -8,32 +8,21 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Node",
-"class": "NanoRpc",
-"language": "GDScript",
-"path": "res://addons/nano-godot/nano_rpc.gd"
-}, {
-"base": "Node",
-"class": "NanoRpcActions",
-"language": "GDScript",
-"path": "res://addons/nano-godot/nano_rpc_actions.gd"
-} ]
-_global_script_class_icons={
-"NanoRpc": "",
-"NanoRpcActions": ""
-}
-
 [application]
 
 config/name="Nano-godot-plugin"
-run/main_scene="res://demo/main_scene.tscn"
+run/main_scene="res://demo/load_wallet.tscn"
 config/icon="res://demo/icon.png"
 
-[editor_plugins]
+[autoload]
 
-enabled=PoolStringArray( "nano-godot" )
+global="*res://demo/global.gd"
 
 [rendering]
 
+environment/default_clear_color=Color( 0.247059, 0.411765, 0.533333, 1 )
 environment/default_environment="res://demo/default_env.tres"
+
+[world]
+
+2d/default_clear_color=false

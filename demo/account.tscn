@@ -1,0 +1,270 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://demo/account.gd" type="Script" id=1]
+[ext_resource path="res://demo/PendingRequest.gd" type="Script" id=2]
+[ext_resource path="res://demo/BalanceRequest.gd" type="Script" id=3]
+[ext_resource path="res://demo/NanoReceiver.gd" type="Script" id=4]
+[ext_resource path="res://demo/HistoryRequest.gd" type="Script" id=5]
+[ext_resource path="res://demo/NanoSender.gd" type="Script" id=6]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Default" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="Default"]
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoLabel" type="Label" parent="Default"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.45
+anchor_bottom = 0.2
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackupSeed" type="Button" parent="Default"]
+anchor_left = 0.05
+anchor_top = 0.25
+anchor_right = 0.45
+anchor_bottom = 0.35
+text = "Backup Seed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReceiveButton" type="Button" parent="Default"]
+anchor_left = 0.05
+anchor_top = 0.4
+anchor_right = 0.45
+anchor_bottom = 0.5
+margin_top = -0.707092
+margin_bottom = -0.707092
+rect_pivot_offset = Vector2( 192.475, 30.9845 )
+text = "Receive Nano"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SendButton" type="Button" parent="Default"]
+anchor_left = 0.05
+anchor_top = 0.55
+anchor_right = 0.45
+anchor_bottom = 0.65
+margin_top = -0.707092
+margin_bottom = -0.707092
+rect_pivot_offset = Vector2( 192.475, 30.9845 )
+text = "Send Nano"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackupSeedView" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="BackupSeedView"]
+anchor_left = 0.4
+anchor_top = 0.65
+anchor_right = 0.6
+anchor_bottom = 0.75
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CopyButton" type="Button" parent="BackupSeedView"]
+anchor_left = 0.4
+anchor_top = 0.5
+anchor_right = 0.6
+anchor_bottom = 0.6
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SeedLabel" type="Label" parent="BackupSeedView"]
+anchor_left = 0.1
+anchor_top = 0.4
+anchor_right = 0.9
+anchor_bottom = 0.4
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReceiveView" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton2" type="Button" parent="ReceiveView"]
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.9
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AccountLabel" type="Label" parent="ReceiveView"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.1
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SendView" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.707153
+margin_top = 1.41419
+margin_right = -0.707153
+margin_bottom = 1.41418
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton2" type="Button" parent="SendView"]
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.9
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SendButton" type="Button" parent="SendView"]
+anchor_left = 0.4
+anchor_top = 0.65
+anchor_right = 0.6
+anchor_bottom = 0.75
+text = "Send"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddressLabel" type="TextEdit" parent="SendView"]
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.3
+margin_left = -0.707153
+margin_right = -0.707153
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmountLabel" type="TextEdit" parent="SendView"]
+anchor_left = 0.2
+anchor_top = 0.4
+anchor_right = 0.8
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SendView"]
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.2
+margin_left = -0.707153
+margin_right = -0.707153
+text = "Enter destination address to send to:"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="SendView"]
+anchor_left = 0.2
+anchor_top = 0.3
+anchor_right = 0.8
+anchor_bottom = 0.4
+margin_left = -1.41431
+margin_top = -0.707092
+margin_right = -1.41431
+margin_bottom = -0.707092
+text = "Enter amount to send:"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="ErrorLabel" type="Label" parent="SendView"]
+anchor_left = 0.2
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.6
+margin_left = -1.41431
+margin_top = -0.707092
+margin_right = -1.41431
+margin_bottom = -0.707092
+align = 1
+valign = 1
+autowrap = true
+
+[node name="BalanceRequest" type="NanoRequest" parent="."]
+script = ExtResource( 3 )
+
+[node name="HistoryRequest" type="NanoRequest" parent="."]
+script = ExtResource( 5 )
+
+[node name="PendingRequest" type="NanoRequest" parent="."]
+script = ExtResource( 2 )
+
+[node name="NanoReceiver" type="NanoReceiver" parent="."]
+script = ExtResource( 4 )
+
+[node name="NanoWatcher" type="NanoWatcher" parent="."]
+
+[node name="NanoSender" type="NanoSender" parent="."]
+script = ExtResource( 6 )
+
+[connection signal="pressed" from="Default/BackupSeed" to="." method="_on_BackupSeed_pressed"]
+[connection signal="pressed" from="Default/ReceiveButton" to="." method="_on_ReceiveButton_pressed"]
+[connection signal="pressed" from="Default/SendButton" to="." method="_on_SendButton_pressed"]
+[connection signal="pressed" from="BackupSeedView/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="BackupSeedView/CopyButton" to="." method="_on_CopyButton_pressed"]
+[connection signal="pressed" from="ReceiveView/BackButton2" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="SendView/BackButton2" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="SendView/SendButton" to="." method="_on_SendConfirmButton_pressed"]
+[connection signal="request_completed" from="BalanceRequest" to="BalanceRequest" method="_on_BalanceRequest_request_completed"]
+[connection signal="request_completed" from="HistoryRequest" to="HistoryRequest" method="_on_HistoryRequest_request_completed"]
+[connection signal="request_completed" from="PendingRequest" to="PendingRequest" method="_on_PendingRequest_request_completed"]
+[connection signal="nano_receive_completed" from="NanoReceiver" to="NanoReceiver" method="_on_NanoReceiver_nano_receive_completed"]
+[connection signal="confirmation_received" from="NanoWatcher" to="." method="_on_NanoWatcher_confirmation_received"]
+[connection signal="disconnected" from="NanoWatcher" to="." method="_on_NanoWatcher_disconnected"]
+[connection signal="nano_receive_completed" from="NanoWatcher" to="." method="_on_NanoWatcher_nano_receive_completed"]
+[connection signal="nano_send_completed" from="NanoSender" to="NanoSender" method="_on_NanoSender_nano_send_completed"]
