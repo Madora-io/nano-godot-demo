@@ -6,3 +6,8 @@ This project currently has a functional Nano wallet implemented entirely in Godo
 # Setup
 1. Set up and compile the nano-godot-module following instructions here https://github.com/Madora-io/nano-godot-module
 2. Clone this repository and import it into Godot
+3. This demo is set up to use madora.io for Nano network communications. This requires an account there, and an API Key for making requests. Many other node hosts will require something similar. We recommend creating a file called `credentials.gd` for managing these (it will automatically be ignored by git, ensuring that these credentials don't get posted publically). The file should look something like this:
+```
+const username = "YOUR_USERNAME"
+const password = "YOUR_PASSWORD"
+```
